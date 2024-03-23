@@ -1,3 +1,5 @@
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Isogram {
     /**
@@ -13,6 +15,12 @@ public class Isogram {
      * @return true if str is an isogram, false otherwise.
      */
     public boolean isIsogram(String str){
-        return false;
+        Set<Character> result = new TreeSet<Character>();
+        for (int i = 0; i < str.length(); i++) {
+            if (!result.add(str.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
     }
 }
